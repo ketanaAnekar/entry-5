@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/yit8fla.css">
+    <style>
+        body {
+            background-color: red;
+        }
+
+        .look {
+            font-family: "stevie-sans", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 200%;
+            text-align: left;
+            position: relative;
+            left: 50px;
+            color: rgb(255, 255, 255);
+        }
+
+        #box {
+            background-color: rgb(255, 238, 0);
+            border: 10px solid rgb(0, 0, 0);
+            color: black;
+            width: 1500px;
+            height: 200px;
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+        }
+
+        #loading-spinner {
+            display: none;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>entry 5</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="back"> BACK</a>
+        <a href="#" class="next"> NEXT</a>
+    </div>
+    <div class="look">
+        <h2 id="let"> Lets Take A Look Into...</h2>
+    </div>
+    <div class="dad">
+        <h1 id="box" onclick="startLoading()">YOUR DAD'S PLAYLIST</h1>
+        <div id="loading-spinner"></div>
+        <button class="btn-click-me" onclick="showLoading()">Click Me!</button>
+    </div>
+    <div class="g">
+        while you wait for that to load, here are some old songs that are dad playlist worthy! (recommended by my own father)
+    </div>
+<div class="t">
+    <img src="K_.png">
+</div>
+    <div class="position">
+        <img id="ig" src="caset.png" onclick="playAudio('audio1')" onmouseover="playAudio('audio1')" onmouseout="stopAudio('audio1')">
+        <img id="ig" src="boom.png" onclick="playAudio('audio2')" onmouseover="playAudio('audio2')" onmouseout="stopAudio('audio2')">
+        <img id="ig" src="disc .png" alt="Avatar" class="image" onclick="playAudio('audio3')" onmouseover="playAudio('audio3')" onmouseout="stopAudio('audio3')">
+    </div>
+
+    <audio id="audio1" src="Comfortably Numb.mp3"></audio>
+    <audio id="audio2" src="Def Leppard - Pour Some Sugar On Me (Official Lyric Video).mp3"></audio>
+    <audio id="audio3" src="Lynyrd Skynyrd - Sweet Home Alabama (Lyric Video).mp3"></audio>
+
+    <script>
+        function showLoading() {
+            var loadingSpinner = document.getElementById('loading-spinner');
+
+            // Show loading spinner
+            loadingSpinner.style.display = 'block';
+
+            // Simulate loading time (you can replace this with your actual loading logic)
+            setTimeout(function () {
+                // Hide loading spinner after loading is complete
+                loadingSpinner.style.display = 'none';
+
+                // Add your logic to display your dad's playlist or perform any other action
+                alert("your dad was born in the 1900s so this may take a while...");
+            }, 2000); // Change 3000 to the desired loading time in milliseconds
+        }
+
+        function playAudio(audioId) {
+            var audio = document.getElementById(audioId);
+            audio.play();
+        }
+
+        function stopAudio(audioId) {
+            var audio = document.getElementById(audioId);
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
